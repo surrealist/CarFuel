@@ -1,0 +1,36 @@
+﻿@using CarFuel.Models
+@model FillUp
+
+<h2>Add Fill Up</h2>
+
+<h3>@ViewBag.CarName</h3>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm()) {
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Odometer</label>
+        <div class="col-md-5">
+            @Html.TextBoxFor(m => m.Odometer,
+                            new { @class = "form-control input-md" }) 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Liters</label>
+        <div class="col-md-5">
+            @Html.TextBoxFor(m => m.Liters,
+                            new { @class = "form-control input-md" }) 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="singlebutton"></label>
+        <div class="col-md-4">
+            <button type="submit" id="singlebutton" name="singlebutton"
+                    class="btn btn-primary">
+                Add
+            </button>
+        </div>
+    </div>
+
+}
